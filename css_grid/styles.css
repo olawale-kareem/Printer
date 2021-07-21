@@ -1,10 +1,11 @@
-/* The desktop and big screen view */
+
 
 .container{
+
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 3fr  1fr;
-    grid-template-rows: 0.2fr 0.2fr auto 0.2fr; 
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 0.2fr 0.2fr 5fr 0.2fr; 
     grid-template-areas: 
     "header header header "
     "sidebar navbar  ads"
@@ -17,82 +18,71 @@
     text-align: center;
 }
 
-/* modify html elements and name grid item to be used in the grid area  */
+
 
 
 header{
-    background-color:#F991CC ;
+    background-color:white;
     border-radius: 20px;
     padding: 20px ;
+    border-color: red;
+    border-style: solid;
     grid-area: header
 }
 
 #navbar{
-    background-color:#E2AFDE ;
+    background-color:white;
     border-radius: 20px;
     padding: 20px ;
+    border-color: red;
+    border-style: solid;
     grid-area: navbar
 }
 
 main{
-    background-color:#D3C2CE ;
+    background-color:white;
     border-radius: 20px;
     padding: 20px ;
+    border-color: red;
+    border-style: solid;
     grid-area: main
 }
 
 #sidebar{
-    background-color:#D3D2C7 ;
+    background-color:white;
     border-radius: 20px;
     padding: 20px ;
+    border-color: red;
+    border-style: solid;
     grid-area: sidebar
 }
 
 #ads{
-    background-color:#D3D2C7 ;
+    background-color:white;
     border-radius: 20px;
     padding: 20px ;
+    border-color: red;
+    border-style: solid;
     grid-area: ads
 }
 
 footer{
-    background-color:#E2E1B9 ;
+    background-color:white;
     border-radius: 20px;
     padding: 20px ;
+    border-color: red;
+    border-style: solid;
     grid-area: footer
 } 
 
-/* specify where each element should leave in the grid */
 
-/* mobile  view */
-@media  screen and (min-width: 480px) and (max-width:780px)  {
-    .container{
-        display: grid;
-        height: 100vh;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 0.2fr 1fr 0.2fr 0.2fr 0.2fr; 
-        grid-template-areas: 
-        "header "
-        "navbar"
-        "main"
-        "sidebar"
-        "ads"
-        "footer"
-        ;
-        grid-gap: 2rem;
-    }
-
-}
-
-
-/* tablet view */
-@media  screen and (min-width: 781px) and (max-width:1024px) 
+@media  screen and (max-width: 750px)
 {
     .container{
         display: grid;
         height: 100vh;
-        grid-template-columns: 1fr  1fr;
-        grid-template-rows: 0.2fr 0.2fr auto 0.2fr; 
+        grid-template-columns: 2fr  5fr;
+        grid-template-rows: 0.2fr 0.2fr 7fr 0.2fr; 
         grid-template-areas: 
         "header  header "
         "navbar navbar "
@@ -105,3 +95,21 @@ footer{
 
 
 
+@media  screen  and (max-width: 450px) {
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 4fr;
+        grid-template-rows: 0.2fr 0.2fr 3fr 0.2fr 0.2fr 0.2fr; 
+        grid-template-areas: 
+        "header "
+        "navbar"
+        "main"
+        "sidebar"
+        "ads"
+        "footer"
+        ;
+        grid-gap: 2rem;
+    }
+
+}
