@@ -112,11 +112,11 @@ class Printer:
         print_quantity = input("""How many quantity would you like to print?: """)
 
         
-        print_quantity_regex = '[0-9]$'
+        print_quantity_regex = '^[0-9]'
         print_quantity_validation = re.match(print_quantity_regex, print_quantity)
-        while print_quantity_validation == None:
+        while print_quantity_validation == None or  "." in print_quantity:
             print_quantity= input("Wrong input, enter only numbers (0-9) ")
-            print_quantity_regex = '[0-9]$'
+            print_quantity_regex = '^[0-9]'
             print_quantity_validation = re.match(print_quantity_regex, print_quantity)
             print_quantity_validation = print_quantity_validation
 
@@ -190,9 +190,10 @@ class Printer:
         """)
 
        
-        currency_quantity_regex = '[0-9]$'
+        currency_quantity_regex = '^[0-9]'
         currency_quantity_validation = re.match(currency_quantity_regex, currency_quantity)
-        while currency_quantity_validation == None:
+        while currency_quantity_validation == None or  "." in currency_quantity:
+
             currency_quantity= input(f"""
             --------------------------------------------------
             Wrong input, quantity can only be numbers (0-9)
@@ -201,11 +202,10 @@ class Printer:
             Please enter currency quantity:
             --------------------------------------------------
             """)
-            currency_quantity_regex = '[0-9]$'
-            currency_quantity = currency_quantity
+
+            currency_quantity_regex = '^[0-9]'
             currency_quantity_validation = re.match(currency_quantity_regex, currency_quantity)
             currency_quantity_validation = currency_quantity_validation
-
 
         
 
