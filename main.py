@@ -315,9 +315,9 @@ class Printer:
 
 
 # instantiate a new user of the printer class       
-new_user = Printer()
-# starts the printer
-new_user.start()
+print_job = Printer()
+# starts the printer for a new user
+print_job.start()
 
 
 

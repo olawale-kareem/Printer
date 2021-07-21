@@ -1,0 +1,107 @@
+/* The desktop and big screen view */
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 3fr  1fr;
+    grid-template-rows: 0.2fr 0.2fr auto 0.2fr; 
+    grid-template-areas: 
+    "header header header "
+    "sidebar navbar  ads"
+    "sidebar main  ads"
+    "sidebar main  ads"
+    "footer footer footer"
+    ;
+    grid-gap: 2rem;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* modify html elements and name grid item to be used in the grid area  */
+
+
+header{
+    background-color:#F991CC ;
+    border-radius: 20px;
+    padding: 20px ;
+    grid-area: header
+}
+
+#navbar{
+    background-color:#E2AFDE ;
+    border-radius: 20px;
+    padding: 20px ;
+    grid-area: navbar
+}
+
+main{
+    background-color:#D3C2CE ;
+    border-radius: 20px;
+    padding: 20px ;
+    grid-area: main
+}
+
+#sidebar{
+    background-color:#D3D2C7 ;
+    border-radius: 20px;
+    padding: 20px ;
+    grid-area: sidebar
+}
+
+#ads{
+    background-color:#D3D2C7 ;
+    border-radius: 20px;
+    padding: 20px ;
+    grid-area: ads
+}
+
+footer{
+    background-color:#E2E1B9 ;
+    border-radius: 20px;
+    padding: 20px ;
+    grid-area: footer
+} 
+
+/* specify where each element should leave in the grid */
+
+/* mobile  view */
+@media  screen and (min-width: 480px) and (max-width:780px)  {
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.2fr 1fr 0.2fr 0.2fr 0.2fr; 
+        grid-template-areas: 
+        "header "
+        "navbar"
+        "main"
+        "sidebar"
+        "ads"
+        "footer"
+        ;
+        grid-gap: 2rem;
+    }
+
+}
+
+
+/* tablet view */
+@media  screen and (min-width: 781px) and (max-width:1024px) 
+{
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr  1fr;
+        grid-template-rows: 0.2fr 0.2fr auto 0.2fr; 
+        grid-template-areas: 
+        "header  header "
+        "navbar navbar "
+        "sidebar main "
+        "ads footer";
+        grid-gap: 2rem;
+    }
+
+}
+
+
+
